@@ -1,11 +1,6 @@
 # 2.a: Implement full boolean querying supporting AND, OR and NOT.
-# from cyberbrain import trace
 # from Code.positional_index import create_positional_index, reverse_index_keys
 
-# p_index = create_positional_index()
-# r_index = reverse_index_keys(p_index)
-# print(p_index)
-# print(r_index)
 
 # ==============================================================================
 # Getting positional postinglist of terms
@@ -13,6 +8,7 @@
 
 
 def get_pos_posting_list(word, p_index):
+    word = word.lower()
     if word in p_index:
         return p_index[word]
     else:

@@ -7,11 +7,11 @@ def create_positional_index():
     document = 1
 
     # Load the stop word list into memory
-    with open('../Stopword-List.txt') as file:
+    with open('./Stopword-List.txt') as file:
         stopwords = list(word.rstrip() for word in file)
 
-    for filename in os.listdir('../Documents'):
-        file = open('../Documents/' + filename, "r")
+    for filename in os.listdir('./Documents'):
+        file = open('./Documents/' + filename, "r")
         position = 0
 
         for line in file:
@@ -38,7 +38,6 @@ def create_positional_index():
         document += 1
 
     return positional_index
-
 
 def reverse_index_keys(index):
     reversed_index = dict(map(lambda kv: (kv[0][::-1], kv[1]), index.items()))
